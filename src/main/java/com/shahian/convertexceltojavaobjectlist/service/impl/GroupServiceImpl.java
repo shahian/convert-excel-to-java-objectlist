@@ -29,4 +29,12 @@ public class GroupServiceImpl implements GroupService {
         List<Group> groupList = Poiji.fromExcel(file, Group.class);
         return groupList;
     }
+
+    @Override
+    public List<Group> getListfromExcelDataV2() throws IOException {
+        ClassLoader classLoader = getClass().getClassLoader();
+        File file = new File(classLoader.getResource("Group.xlsx").getFile());
+        List<Group> groupList = Poiji.fromExcel(file, Group.class);
+        return groupList;
+    }
 }

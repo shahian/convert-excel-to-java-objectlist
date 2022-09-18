@@ -23,5 +23,10 @@ public class GroupController {
         List<Group> groups = groupService.getListfromExcelData();
         return groups;
     }
+    @GetMapping(value = "/v2/groups", name = "${service.group.getAll}")
+    public List<Group> getListfromExcelDataV2() throws IOException {
+        List<Group> groups = groupService.getListfromExcelDataV2();
+        return groups;
+    }
 
 }
